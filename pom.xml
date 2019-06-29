@@ -17,6 +17,9 @@
         <module>linguochao_rabbitmq</module>
         <module>linguochao_sms</module>
         <module>linguochao_jwt</module>
+        <module>linguochao_eureka</module>
+        <module>linguochao_feign</module>
+        <module>linguochao_zuul</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

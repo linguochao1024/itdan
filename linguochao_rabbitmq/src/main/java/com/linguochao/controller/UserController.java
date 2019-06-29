@@ -25,8 +25,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
-
     /**
      * 获取手机验证码
      */

@@ -1,0 +1,26 @@
+server:
+  port: 9112
+spring:
+  application:
+    name: linguochao-zuul
+eureka:
+  client:
+    service-url:   # 暴露Eureka的注册地址
+      defaultZone: http://127.0.0.1:6868/eureka
+  instance:
+    prefer-ip-address: true  # 这个配置在本地可以是false，意味着使用localhost进行调用，但是远程独立部署的时候，这个配置就必须是true
+jwt:
+  config:
+    key: itdan
+    ttl: 1800000
+zuul:
+  routes:
+    a:
+      path: /base/**   # 转发路径
+      serviceId: linguochao-jpa # 需要转发的服务名称
+    b:
+      path: /qa/**
+      serviceId: linguochao-elasticsearch
+    c:
+      path: /user/**
+      serviceId: linguochao-rabbitmq
