@@ -14,7 +14,7 @@
         <module>linguochao_cache</module>
         <module>linguochao_mongoDB</module>
         <module>linguochao_elasticsearch</module>
-        <module>kinguochao_rabbitmq</module>
+        <module>linguochao_rabbitmq</module>
         <module>linguochao_sms</module>
         <module>linguochao_jwt</module>
     </modules>
