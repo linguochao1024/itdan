@@ -5,9 +5,9 @@ spring:
     name: linguochao-cache #指定服务名
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.66.133:3306/tensquare_article?characterEncoding=UTF8
+    url: jdbc:mysql://127.0.0.1:3306/linguochao_cache?characterEncoding=UTF8
     username: root
-    password: 123456
+    password: root
   jpa:
     database: MySQL
     show-sql: true

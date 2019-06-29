@@ -2,10 +2,10 @@ server:
   port: 9008
 spring:
   application:
-    name: tensquare-user #指定服务名
+    name: linguochao-jwt #指定服务名
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.66.133:3306/tensquare_user?characterEncoding=UTF8
+    url: jdbc:mysql://127.0.0.1:3306/linguochao_jwt?characterEncoding=UTF8
     username: root
     password: 123456
   jpa:
@@ -15,5 +15,5 @@ spring:
     host: 192.168.66.133
 jwt:
   config:
-    key: itheima
+    key: itdan
     ttl: 1800000

@@ -2,12 +2,12 @@ server:
   port: 9008
 spring:
   application:
-    name: tensquare-user #指定服务名
+    name: linguochao-rabbitmq #指定服务名
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://192.168.66.133:3306/tensquare_user?characterEncoding=UTF8
+    url: jdbc:mysql://192.168.66.133:3306/tensquare_rabbitmq?characterEncoding=UTF8
     username: root
-    password: 123456
+    password: root
   jpa:
     database: MySQL
     show-sql: true
