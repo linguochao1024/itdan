@@ -1,0 +1,14 @@
+service:
+  port: 9001
+spring:
+  application:
+     name: linguochao-jpa
+  datasource: # 数据源
+    url: jdbc:mysql://192.168.66.133:3306/tensquare_base?characterEncoding=UTF8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 123456
+  jpa: # JPA框架配置
+    show-sql: true  # 打印sql语法
+    generate-ddl: true # 自动建表
+    database: mysql  # 数据库类型
