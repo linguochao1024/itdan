@@ -12,6 +12,8 @@ spring:
     show-sql: true  # 打印sql语法
     # generate-ddl: true # 自动建表
     database: mysql  # 数据库类型
+  rabbitmq:
+    host: 192.168.184.135
 eureka:
   client:
     service-url:   # 暴露Eureka的注册地址

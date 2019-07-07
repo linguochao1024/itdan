@@ -1,0 +1,19 @@
+server:
+  port: 12000
+spring:
+  application:
+    name: linguochao-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://gitee.com/linguohcao/quick_dev.git
+          #username:  # 如果仓库是私有的，需要配置用户和密码，公开的则不需要
+          #password:
+  rabbitmq:
+    host: 192.168.66.133
+management: #暴露触发消息总线的地址
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

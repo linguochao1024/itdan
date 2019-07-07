@@ -1,0 +1,8 @@
+#springCloudConfig 配置
+spring:
+  cloud:
+    config:
+      uri: http://127.0.0.1:12000
+      name: jpa    # 获取的文件名称 = name-profile.yml    base-dev.yml
+      profile: dev
+      label: master   # 仓库的分支名称
