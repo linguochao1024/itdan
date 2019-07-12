@@ -20,6 +20,7 @@ public class GatheringApplication {
 ##### （2）在 GatheringService 的 findById 方法添加缓存注解，这样当此方法第一次运行，在缓存中没有找到对应的 value 和 key，则将查询结果放入缓存。
 
 ```java
+public class GatheringService {
 /**
 * 根据 ID 查询实体
 * @param id
@@ -29,11 +30,13 @@ public class GatheringApplication {
 public Gathering findById(String id) {
 	return gatheringDao.findById(id).get();
 }
+}
 ```
 ##### （3）当我们对数据进行删改的时候，需要更新缓存。其实更新缓存也就是清除缓存，因为清除缓存后，用户再次调用查询方法无法提取缓存会重新查找数据库中的记录并放入缓存。
 
 ```java
-在 GatheringService 的 update、deleteById 方法上添加清除缓存的注解
+//在 GatheringService 的 update、deleteById 方法上添加清除缓存的注解
+public class GatheringService {
 /**
 * 修改
 */
@@ -47,6 +50,7 @@ public void update(Gathering gathering) {
 @CacheEvict(value="gathering",key="#id")
 public void deleteById(String id) {
 	gatheringDao.deleteById(id);
+}
 }
 ```
 ## 2.和redis的对比

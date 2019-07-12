@@ -28,6 +28,7 @@ spring
 ```
 （3）修改 ArticleService 引入 RedisTemplate，并修改 findById 方法
 ```java
+public class ArticleService{
 // 根据 ID 查询实体
 public Article findById(String id) {
     // 先从 redis 查询出文章
@@ -40,33 +41,39 @@ public Article findById(String id) {
     }	
 	return article;
 }
+}
 ```
 boundValueOps操作Redis
 ```java
-Article article = (Article)redisTemplate.boundValueOps("article_" + id ).get();
-redisTemplate.boundValueOps("article_" + id ).set( article );
+public class ArticleService{ 
+    Article article = (Article)redisTemplate.boundValueOps("article_" + id ).get();
+    redisTemplate.boundValueOps("article_" + id ).set( article );
+}
 ```
 
 #### 2.  修改或删除后清除缓存
 ```java
 //修改
-public void update(Article article) {
-    redisTemplate.delete( "article_" + article.getId() );	// 删除缓存
-    articleDao.save(article);
-}
-// 删除
-public void deleteById(String id) {
-    redisTemplate.delete( "article_" + id );	// 删除缓存
-    articleDao.deleteById(id);
+public class ArticleService{
+    public void update(Article article) {
+        redisTemplate.delete( "article_" + article.getId() );	// 删除缓存
+        articleDao.save(article);
+    }
+    // 删除
+    public void deleteById(String id) {
+        redisTemplate.delete( "article_" + id );	// 删除缓存
+        articleDao.deleteById(id);
+    }
 }
 ```
 #### 3.  缓存过期处理  --  修改 findById 方法 ，设置 1 天的过期时间：
-```java
+```
 // 放入 redis 缓存
 redisTemplate.opsForValue().set("article_" + id, article,1, TimeUnit.DAYS);
 
 //为了方便测试，我们可以把过期时间改为 10 秒，然后观察控制台输出
 redisTemplate.opsForValue().set("article_" + id, article,10, TimeUnit.SECONDS);
+
 ```
 
 
