@@ -21,6 +21,7 @@
         <module>linguochao_feign</module>
         <module>linguochao_zuul</module>
         <module>linguochao_config</module>
+        <module>linguochao_cloud</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
