@@ -144,23 +144,26 @@ return querySendDetailsResponse;
 }
 }
 ```
-1. 需求分析
-开发短信发送微服务，从 rabbitMQ 中提取消息，调用阿里大于短信接口实现短信发送 。（关于短信阿里大于，我们在前面的电商项目中已经讲解过，故账号申请等环节略过）我们这里实际做的就是消息的消费者
 
-2. 提取队列中的消息
+# 案例: 用户注册发送验证码
+###  1. 需求分析
+开发短信发送微服务，从 rabbitMQ 中提取消息，调用阿里大于短信接口实现短信发送 。
+我们这里实际做的就是消息的消费者
+
+###  2. 提取队列中的消息
 1.  工程搭建
 （1）创建工程模块：linguochao_sms，pom.xml 引入依赖
 ```pom
 <dependency>
-<groupId>org.springframework.boot</groupId>
-<artifactId>spring-boot-starter-amqp</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-amqp</artifactId>
 </dependency>
 ```
 
 （2）创建 application.yml
 ```yml
 server:
-	port: 9009
+    port: 9009
 spring:
     application:
    		name: linguochao‐sms #指定服务名
@@ -179,7 +182,7 @@ public class SmsApplication {
 }
 ```
 
-2.  消息监听类
+###  3.  消息监听类
 （1）创建短信监听类，获取手机号和验证码
 ```java
 @Component
