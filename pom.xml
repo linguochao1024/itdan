@@ -17,6 +17,7 @@
         <module>linguochao_sms</module>
         <module>linguochao_jwt</module>
         <module>linguochao_cloud</module>
+        <module>linguochao_swagger</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
