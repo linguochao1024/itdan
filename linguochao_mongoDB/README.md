@@ -37,7 +37,7 @@ SpringData 家族成员之一，用于操作 MongoDb 的持久层框架，封装
 #####  3）创建 application.yml
 ```yml
 server:
-	port: 9006
+    port: 9006
 spring:
     application:
         name: linguochao‐spit #指定服务名
