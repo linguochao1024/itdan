@@ -10,17 +10,12 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>linguochao_common</module>
-        <module>linguochao_jpa</module>
         <module>linguochao_cache</module>
         <module>linguochao_mongoDB</module>
         <module>linguochao_elasticsearch</module>
         <module>linguochao_rabbitmq</module>
         <module>linguochao_sms</module>
         <module>linguochao_jwt</module>
-        <module>linguochao_eureka</module>
-        <module>linguochao_feign</module>
-        <module>linguochao_zuul</module>
-        <module>linguochao_config</module>
         <module>linguochao_cloud</module>
     </modules>
     <parent>
