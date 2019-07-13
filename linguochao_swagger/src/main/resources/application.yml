@@ -3,6 +3,7 @@ server:
 #wagger多环境配置,是否开启,生产环境关闭,开发测试环境开启
 swagger2:
   enable: true
+swagger:
   #swagger自定义文档路径
   markdowns: classpath:mardow/*
   #开启Swagger的Basic认证功能,默认是false

@@ -24,7 +24,8 @@
 Swagger2Config配置文件如下：
 ```
 @Configuration
-@EnableSwagger2
+@Configuration
+@EnableSwaggerBootstrapUI
 public class SwaggerConfig {
 
     @Value("${swagger2.enable}")
