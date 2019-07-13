@@ -27,9 +27,9 @@
 - **个性化设置**：勾选下面三个选项：菜单Api地址显示，分组tag显示dsecription说明属性，启用SwaggerBootstrapUi提供的增强功能
 
 ## 资源
-swagger-ui地址: https://gitee.com/xiaoym/swagger-bootstrap-ui
-swagger-ui文档: https://doc.xiaominfo.com/guide/
-我的demo工程: https://github.com/linguochao1024/itdan/tree/master/linguochao_swagger
+- swagger-ui地址: https://gitee.com/xiaoym/swagger-bootstrap-ui
+- swagger-ui文档: https://doc.xiaominfo.com/guide/
+- 我的demo工程: https://github.com/linguochao1024/itdan/tree/master/linguochao_swagger
 
 # 后端开发手册
 
