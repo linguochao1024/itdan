@@ -86,7 +86,7 @@ JJWT 是一个提供端到端的 JWT 创建和验证的 Java 库。永远免费�
 </dependency>
 ```
 
-#####（2）创建类 CreateJwtTest，用于生成 token
+##### （2）创建类 CreateJwtTest，用于生成 token
 ```
 public class CreateJwtTest {
 public static void main(String[] args) {
@@ -102,7 +102,7 @@ public static void main(String[] args) {
 setIssuedAt 用于设置签发时间
 signWith 用于设置签名秘钥
 
-#####（3）测试运行，输出如下:
+##### （3）测试运行，输出如下:
 ```
 eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4ODgiLCJzdWIiOiLlsI_nmb0iLCJpYXQiOjE1Mj
 M0MTM0NTh9.gq0J‐cOM_qCNqU_s‐d_IrRytaNenesPmqAIhQpYXHZk
