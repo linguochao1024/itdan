@@ -21,6 +21,7 @@
         <module>linguochao_multiDataSource</module>
         <module>../linguochao_log</module>
         <module>linguochao_log`</module>
+        <module>linguochao_poi</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
