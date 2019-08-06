@@ -18,6 +18,9 @@
         <module>linguochao_jwt</module>
         <module>linguochao_cloud</module>
         <module>linguochao_swagger</module>
+        <module>linguochao_multiDataSource</module>
+        <module>../linguochao_log</module>
+        <module>linguochao_log`</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

@@ -1,0 +1,13 @@
+spring:
+    datasource:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driverClassName: com.mysql.jdbc.Driver
+        druid:
+            first:  #数据源1
+                url: jdbc:mysql://localhost:3307/work?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8racterEncoding=UTF-8
+                username: *******
+                password: *******
+            second:  #数据源2
+                url: jdbc:mysql://localhost:3306/work?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8
+                username: ******
+                password: *******
