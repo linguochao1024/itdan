@@ -19,8 +19,7 @@
         <module>linguochao_cloud</module>
         <module>linguochao_swagger</module>
         <module>linguochao_multiDataSource</module>
-        <module>../linguochao_log</module>
-        <module>linguochao_log`</module>
+        <module>linguochao_log</module>
         <module>linguochao_poi</module>
         <module>linguochao_paramSecurity</module>
     </modules>
