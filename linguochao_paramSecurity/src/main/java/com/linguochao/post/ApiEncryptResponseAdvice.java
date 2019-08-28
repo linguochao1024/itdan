@@ -1,4 +1,4 @@
-package com.linguochao.filter;
+package com.linguochao.post;
 
 import com.linguochao.exception.ApiException;
 import com.linguochao.exception.SystemException;

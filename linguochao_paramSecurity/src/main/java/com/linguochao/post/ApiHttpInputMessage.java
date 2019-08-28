@@ -1,4 +1,4 @@
-package com.linguochao.filter;
+package com.linguochao.post;
 
 import com.linguochao.exception.ApiException;
 import com.linguochao.exception.SystemException;
@@ -69,7 +69,7 @@ public class ApiHttpInputMessage implements HttpInputMessage {
      * @param body
      * @param secretKey
      */
-    private void verifySign(String sign, String nonce, String body, String secretKey){
+    public static void verifySign(String sign, String nonce, String body, String secretKey){
         logger.info("========签名验证开始========");
         if (StringUtils.isEmpty(sign)) {
             throw new ApiException(SystemException.ExceptionHolder.SIGN_MISS);
