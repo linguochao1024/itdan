@@ -71,7 +71,7 @@ public class PersonService {
         return page;
     }
 
-    public void queryByCondition(SearchParams params){
+    public ScoredPage<Person> queryByCondition(SearchParams params){
 
         /** 创建查询对象 */
         Query query = new SimpleQuery("*:*");
@@ -85,10 +85,10 @@ public class PersonService {
 
         //部门路径
         if (params.getStatus().equals(0)){
-            Criteria criteria = new Criteria("departId").is(params.getDepartId());
+            Criteria criteria = new Criteria("departid").is(params.getDepartId());
             query.addCriteria(criteria);
         }else {
-            Criteria criteria = new Criteria("departPath").startsWith(params.getDepartmentPath());
+            Criteria criteria = new Criteria("departpath").startsWith(params.getDepartmentPath());
             query.addCriteria(criteria);
         }
 
@@ -98,18 +98,16 @@ public class PersonService {
 
 
         //排序
-        Sort sort = Sort.by("orderNumber").ascending();
+        Sort sort = Sort.by("ordernumber").ascending();
         query.addSort(sort);
 
         //分页
-        PageRequest page = PageRequest.of(1, 20);
+        PageRequest page = PageRequest.of(0, 20);
         query.setPageRequest(page);
 
         ScoredPage<Person> people = solrTemplate.queryForPage("collection1",query, Person.class);
-        List<Person> content = people.getContent();
-        int size = people.getSize();
-        int totalPages = people.getTotalPages();
 
+        return people;
     }
 
 
