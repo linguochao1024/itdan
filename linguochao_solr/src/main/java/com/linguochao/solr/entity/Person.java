@@ -25,6 +25,9 @@ public class Person implements Serializable {
     @Field("departpath")
     private String departPath;
 
+    @Field("departid")
+    private Long departId;
+
     @Field("mobile")
     private String mobile;
 
@@ -34,7 +37,10 @@ public class Person implements Serializable {
     @Field("status")
     private String status;
 
-    @Field("orderNumber")
+    @Field("ordernumber")
     private String orderNumber;
+
+
+    private String keywords;
 
 }

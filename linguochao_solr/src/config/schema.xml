@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema name="person" version="1.5">
+  
+	<!-- 版本号(必须) -->
+	<field name="_version_" type="long" indexed="true" stored="true"/>
+	<!-- 业务域
+		 name: 域名称
+		 type: 域的数据类型
+		 indexed: 是否创建索引
+		 stored: 是否存储
+	     required: 是否必须的域
+	-->
+	<field name="id" type="long" indexed="true" stored="true" required="true"/>
+	<field name="name" type="string" indexed="true" stored="true"/>
+	<field name="departname" type="string" indexed="true" stored="true"/>
+	<field name="departpath" type="string" indexed="true" stored="true"/>
+	<field name="mobile" type="string" indexed="false" stored="true"/>
+	<field name="certificate" type="string" indexed="true" stored="true"/>
+	<field name="status" type="string" indexed="true" stored="true"/>
+	<field name="ordernumber" type="string" indexed="true" stored="true"/>
+	
+	<!-- 复制域 -->
+	<field name="keywords" type="string" indexed="true" 
+		   stored="false" multiValued="true"/>
+	<copyField source="name" dest="keywords"/>
+	<copyField source="mobile" dest="keywords"/>
+	<copyField source="certificate" dest="keywords"/>
+
+
+	<!-- 唯一的key主键(id) -->
+	<uniqueKey>id</uniqueKey>
+
+	<!-- 配置域的类型
+	     name: 域的类型名称
+		 class: 具体类型
+	-->
+    <fieldType name="string" class="solr.StrField"/>
+    <fieldType name="boolean" class="solr.BoolField"/>
+    <fieldType name="int" class="solr.TrieIntField"/>
+    <fieldType name="float" class="solr.TrieFloatField"/>
+    <fieldType name="long" class="solr.TrieLongField"/>
+    <fieldType name="double" class="solr.TrieDoubleField"/>
+    <fieldType name="date" class="solr.TrieDateField"/>
+    
+	
+</schema>
