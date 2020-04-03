@@ -2,6 +2,7 @@ package com.linguochao.solr.entity;
 
 import lombok.Data;
 import org.apache.solr.client.solrj.beans.Field;
+import org.springframework.data.solr.core.mapping.SolrDocument;
 
 import java.io.Serializable;
 
@@ -11,6 +12,7 @@ import java.io.Serializable;
  * @Date 2020/3/24 14:20
  */
 @Data
+@SolrDocument(solrCoreName = "collection1")
 public class Person implements Serializable {
 
     @Field

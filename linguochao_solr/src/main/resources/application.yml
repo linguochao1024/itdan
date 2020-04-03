@@ -3,4 +3,4 @@ server:
 spring:
   data:
     solr:
-      host: http://localhost:8080/solr/collection1     
+      host: http://134.175.142.91:8088/solr

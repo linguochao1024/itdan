@@ -14,6 +14,7 @@
 	<field name="name" type="string" indexed="true" stored="true"/>
 	<field name="departname" type="string" indexed="true" stored="true"/>
 	<field name="departpath" type="string" indexed="true" stored="true"/>
+	<field name="departid" type="long" indexed="true" stored="true" required="true"/>
 	<field name="mobile" type="string" indexed="false" stored="true"/>
 	<field name="certificate" type="string" indexed="true" stored="true"/>
 	<field name="status" type="string" indexed="true" stored="true"/>

@@ -4,7 +4,6 @@ import com.linguochao.solr.entity.Person;
 import com.linguochao.solr.entity.SearchParams;
 import com.linguochao.solr.solr.PersonRepository;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.solr.client.solrj.response.UpdateResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -14,16 +13,17 @@ import org.springframework.data.solr.core.query.Criteria;
 import org.springframework.data.solr.core.query.Query;
 import org.springframework.data.solr.core.query.SimpleQuery;
 import org.springframework.data.solr.core.query.result.ScoredPage;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 
 /**
  * @author linguochao
  * @Description TODO
  * @Date 2020/3/24 14:28
  */
-public class UserService {
+@Service
+public class PersonService {
 
     @Autowired
     private PersonRepository personRepository;
@@ -105,7 +105,7 @@ public class UserService {
         PageRequest page = PageRequest.of(1, 20);
         query.setPageRequest(page);
 
-        ScoredPage<Person> people = solrTemplate.queryForPage(query, Person.class);
+        ScoredPage<Person> people = solrTemplate.queryForPage("collection1",query, Person.class);
         List<Person> content = people.getContent();
         int size = people.getSize();
         int totalPages = people.getTotalPages();

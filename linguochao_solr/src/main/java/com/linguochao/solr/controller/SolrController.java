@@ -20,10 +20,6 @@ public class SolrController {
     @Autowired
     private SolrClient client;
 
-
-    @Autowired
-    SolrTemplate solrTemplate;
-
     @RequestMapping("/")
     public String testSolr() throws IOException, SolrServerException {
         SolrDocument document = client.getById("test", "fe7a5124-d75b-40b2-93fe-5555512ea6d2");
