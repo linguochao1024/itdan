@@ -17,14 +17,10 @@ import java.io.IOException;
  */
 @RestController
 public class SolrController {
-    @Autowired
-    private SolrClient client;
 
     @RequestMapping("/")
-    public String testSolr() throws IOException, SolrServerException {
-        SolrDocument document = client.getById("test", "fe7a5124-d75b-40b2-93fe-5555512ea6d2");
-        System.out.println(document);
-        return document.toString();
+    public String testSolr(){
+        return null;
     }
 
 }

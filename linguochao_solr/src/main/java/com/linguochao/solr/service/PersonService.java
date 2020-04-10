@@ -1,7 +1,7 @@
 package com.linguochao.solr.service;
 
 import com.linguochao.solr.entity.Person;
-import com.linguochao.solr.entity.SearchParams;
+import com.linguochao.solr.dto.SearchParams;
 import com.linguochao.solr.solr.PersonRepository;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,43 +71,58 @@ public class PersonService {
         return page;
     }
 
+    /**
+     * 根据条件查询SolrPerson
+     * @param params
+     * @return
+     */
     public ScoredPage<Person> queryByCondition(SearchParams params){
+
 
         /** 创建查询对象 */
         Query query = new SimpleQuery("*:*");
 
         //关键字
         if (StringUtils.isNoneBlank(params.getKeywords())){
-            Criteria criteria = new Criteria("keywords").startsWith(params.getKeywords());
+            Criteria criteria =(new Criteria("name").startsWith(params.getKeywords()));
             /** 添加查询条件 */
             query.addCriteria(criteria);
         }
 
         //部门路径
-        if (params.getStatus().equals(0)){
+        if (params.getIsAll().equals(0)){
+            //查当前部门下
             Criteria criteria = new Criteria("departid").is(params.getDepartId());
             query.addCriteria(criteria);
+            //排序
+            Sort sort = new Sort(Sort.Direction.DESC, "ordernumber_"+params.getDepartId());
+            query.addSort(sort);
         }else {
+            //查询当前部门及子部门
             Criteria criteria = new Criteria("departpath").startsWith(params.getDepartmentPath());
             query.addCriteria(criteria);
         }
 
-        //状态
-        Criteria criteria = new Criteria("status").is(params.getStatus());
-        query.addCriteria(criteria);
 
+        if (params.getStatus()!=null){
+            //状态
+            Criteria criteria = new Criteria("status").is(params.getStatus());
+            query.addCriteria(criteria);
+        }
 
-        //排序
-        Sort sort = Sort.by("ordernumber").ascending();
-        query.addSort(sort);
 
         //分页
-        PageRequest page = PageRequest.of(0, 20);
+        PageRequest page = new  PageRequest(0, 20);
         query.setPageRequest(page);
 
         ScoredPage<Person> people = solrTemplate.queryForPage("collection1",query, Person.class);
-
         return people;
+    }
+
+    public static void main(String[] args) {
+        String managecode="123";
+        String s = String.valueOf(managecode.charAt(managecode.length()-1));
+        System.out.println(s);
     }
 
 

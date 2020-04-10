@@ -2,13 +2,15 @@ package com.linguochao.solr.entity;
 
 import lombok.Data;
 import org.apache.solr.client.solrj.beans.Field;
+import org.springframework.data.solr.core.mapping.Dynamic;
 import org.springframework.data.solr.core.mapping.SolrDocument;
 
 import java.io.Serializable;
+import java.util.Map;
 
 /**
  * @author linguochao
- * @Description TODO
+ * @Description Solr人员数据
  * @Date 2020/3/24 14:20
  */
 @Data
@@ -21,14 +23,8 @@ public class Person implements Serializable {
     @Field("name")
     private String name;
 
-    @Field("departname")
-    private String departName;
-
-    @Field("departpath")
-    private String departPath;
-
-    @Field("departid")
-    private Long departId;
+    @Field("account")
+    private String account;
 
     @Field("mobile")
     private String mobile;
@@ -39,10 +35,21 @@ public class Person implements Serializable {
     @Field("status")
     private String status;
 
-    @Field("ordernumber")
-    private String orderNumber;
 
+    @Field("departname")
+    private String[] departName;
 
-    private String keywords;
+    @Field("departfullname")
+    private String[] departFullName;
+
+    @Field("departpath")
+    private String[] departPath;
+
+    @Field("departid")
+    private Long[] departId;
+
+    @Dynamic
+    @Field("ordernumber_*")
+    private Map<String,Long> ordernumberMap;
 
 }

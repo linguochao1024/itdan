@@ -17,6 +17,7 @@
         <module>linguochao_cloud_config</module>
         <module>linguochao_cloud_zuul</module>
         <module>linguochao_cloud_jpa</module>
+        <module>linguochao_apollo</module>
     </modules>
 
 

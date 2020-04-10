@@ -12,9 +12,9 @@
 	-->
 	<field name="id" type="long" indexed="true" stored="true" required="true"/>
 	<field name="name" type="string" indexed="true" stored="true"/>
-	<field name="departname" type="string" indexed="true" stored="true"/>
-	<field name="departpath" type="string" indexed="true" stored="true"/>
-	<field name="departid" type="long" indexed="true" stored="true" required="true"/>
+	<field name="departname" type="string" indexed="true" stored="true" multiValued="true"/>
+	<field name="departpath" type="string" indexed="true" stored="true" multiValued="true"/>
+	<field name="departid" type="string" indexed="true" stored="true" required="true" multiValued="true"/>
 	<field name="mobile" type="string" indexed="false" stored="true"/>
 	<field name="certificate" type="string" indexed="true" stored="true"/>
 	<field name="status" type="string" indexed="true" stored="true"/>
@@ -23,9 +23,12 @@
 	<!-- 复制域 -->
 	<field name="keywords" type="string" indexed="true" 
 		   stored="false" multiValued="true"/>
-	<copyField source="name" dest="keywords"/>
 	<copyField source="mobile" dest="keywords"/>
 	<copyField source="certificate" dest="keywords"/>
+
+	<!-- 动态域 -->
+	<dynamicField name="ordernumber_*" type="long"
+				  indexed="true" stored="true"/>
 
 
 	<!-- 唯一的key主键(id) -->
