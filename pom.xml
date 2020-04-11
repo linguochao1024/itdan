@@ -23,6 +23,7 @@
         <module>linguochao_poi</module>
         <module>linguochao_paramSecurity</module>
         <module>linguochao_solr</module>
+        <module>linguocaho_design_mode</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
