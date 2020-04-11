@@ -1,7 +1,8 @@
 package com.linguochao.design.structure.adapter.adapter;
 
-import com.java.jikexueyuan.adaptermode.duck.Duck;
-import com.java.jikexueyuan.adaptermode.turkey.Turkey;
+
+import com.linguochao.design.structure.adapter.duck.Duck;
+import com.linguochao.design.structure.adapter.turkey.Turkey;
 
 public class TurkeyAdapter implements Duck {
 	private Turkey turkey;
