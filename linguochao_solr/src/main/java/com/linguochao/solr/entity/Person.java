@@ -52,4 +52,5 @@ public class Person implements Serializable {
     @Field("ordernumber_*")
     private Map<String,Long> ordernumberMap;
 
+    private Long ordernumber;
 }

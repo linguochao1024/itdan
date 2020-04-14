@@ -116,7 +116,22 @@ public class PersonService {
         query.setPageRequest(page);
 
         ScoredPage<Person> people = solrTemplate.queryForPage("collection1",query, Person.class);
+        List<Person> content = people.getContent();
+        validateData(content,params.getDepartId(),params.getIsAll());
+
         return people;
+    }
+
+    private List<Person> validateData(List<Person> content,Integer departId,Integer isAll){
+
+        content.forEach(solrPerson -> {
+            if (isAll==0){
+                Long ordernumber = solrPerson.getOrdernumberMap().get(departId.toString());
+                solrPerson.setOrdernumber(ordernumber);
+            }
+        });
+
+        return content;
     }
 
     public static void main(String[] args) {
