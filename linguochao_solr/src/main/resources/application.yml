@@ -1,6 +1,0 @@
-server:
-  port: 9006
-spring:
-  data:
-    solr:
-      host: http://134.175.142.91:8088/solr
