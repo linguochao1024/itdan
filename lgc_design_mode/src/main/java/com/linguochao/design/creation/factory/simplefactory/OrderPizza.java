@@ -16,7 +16,6 @@ public class OrderPizza {
     SimplePizzaFactory mSimplePizzaFactory;
 
     public OrderPizza(SimplePizzaFactory mSimplePizzaFactory) {
-
         setFactory(mSimplePizzaFactory);
     }
 

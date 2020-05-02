@@ -12,7 +12,6 @@ public class StereoAddVolCommand implements Command {
 	
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
 	int vol=	setreo.GetVol();
 	if(vol<11)
 	{
@@ -23,7 +22,6 @@ public class StereoAddVolCommand implements Command {
 
 	@Override
 	public void undo() {
-		// TODO Auto-generated method stub
 	int vol=	setreo.GetVol();
 	if(vol>0)
 	{

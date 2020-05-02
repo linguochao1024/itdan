@@ -12,7 +12,6 @@ public class StereoOnCommand implements Command {
 	
 	@Override
 	public void execute() {
-		// TODO Auto-generated method stub
 		setreo.On();
 		setreo.SetCd();
 		
@@ -20,7 +19,6 @@ public class StereoOnCommand implements Command {
 
 	@Override
 	public void undo() {
-		// TODO Auto-generated method stub
 		setreo.Off();
 	}
 
